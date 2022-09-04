@@ -1,37 +1,20 @@
-import java.util.Scanner;
+import linkedlist.HeroNode;
+import linkedlist.SingleLinkedList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ArrayQueue aq = new ArrayQueue(4);
-        CircledArrayQueue caq = new CircledArrayQueue(4);
-        Scanner s = new Scanner(System.in);
-        String key = "";
-        boolean loop = true;
-        while (loop) {
-            System.out.println("d(display): ");
-            System.out.println("e(exit): ");
-            System.out.println("g(get): ");
-            System.out.println("a(add): ");
-            key = s.next();
-            switch (key) {
-                case "d":
-                    caq.display();
-                    break;
-                case "e":
-                    s.close();
-                    loop = false;
-                    break;
-                case "g":
-                    System.out.println(caq.get());
-                    break;
-                case "t":
-                    System.out.println(caq.total());
-                case "a":
-                    System.out.println("输入一个数字");
-                    int num = s.nextInt();
-                    caq.add(num);
-                    break;
-            }
-        }
+        HeroNode node1 = new HeroNode(1, "wo");
+        HeroNode node2 = new HeroNode(2, "te");
+        HeroNode node3 = new HeroNode(3, "hh");
+        HeroNode node4 = new HeroNode(4, "tt");
+        SingleLinkedList sLinkedList = new SingleLinkedList();
+        sLinkedList.addNode(node1);
+        sLinkedList.addNode(node2);
+        sLinkedList.addNode(node3);
+        sLinkedList.addNode(node4);
+
+        sLinkedList.display();
+
+        System.out.println(node1.next);
     }
 }

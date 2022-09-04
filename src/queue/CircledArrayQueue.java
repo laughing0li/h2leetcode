@@ -1,3 +1,4 @@
+package queue;
 /**
  * 利用数组模拟环形队列，队列可以复用
  * front指向队列第一个元素
@@ -12,10 +13,10 @@ public class CircledArrayQueue {
     private int[] arr; //用于存放数据的数组，模拟队列
 
     public CircledArrayQueue(int size) {
-        maxSize = size;
-        arr = new int[size];
-        front = 0;
-        rear = 0;
+        this.maxSize = size;
+        this.arr = new int[size];
+        this.front = 0;
+        this.rear = 0;
     }
 
     public boolean isEmpty() {

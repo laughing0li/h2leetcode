@@ -1,8 +1,9 @@
+package queue;
 /**
  * 使用数组模拟队列
  */
 
-class ArrayQueue {
+public class ArrayQueue {
     private int maxSize; //队列最大容量
     private int front;  //队列头
     private int rear;   // 队列尾
