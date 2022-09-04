@@ -9,8 +9,9 @@ class ArrayQueue {
     private int[] arr; //用于存放数据的数组，模拟队列
 
     // 构造器，初始化队列
-    public ArrayQueue(int maxSize) {
-        arr = new int[maxSize];
+    public ArrayQueue(int size) {
+        maxSize = size;
+        arr = new int[size];
         front = 0;
         rear = 0;
     }

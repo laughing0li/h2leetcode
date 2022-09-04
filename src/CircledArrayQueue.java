@@ -11,8 +11,9 @@ public class CircledArrayQueue {
     private int rear;   // 指向队列最后一个元素的下一个
     private int[] arr; //用于存放数据的数组，模拟队列
 
-    public CircledArrayQueue(int maxSize) {
-        arr = new int[maxSize];
+    public CircledArrayQueue(int size) {
+        maxSize = size;
+        arr = new int[size];
         front = 0;
         rear = 0;
     }
@@ -42,6 +43,7 @@ public class CircledArrayQueue {
             throw new RuntimeException("队列空！");
         }
         int num = arr[front];
+        // 向前移动一位。
         front = (front + 1) % maxSize;
         return num;
     }
@@ -51,8 +53,10 @@ public class CircledArrayQueue {
             throw new RuntimeException("队列为空！");
         }
         int arrLen = total();
+        // 因为是环形的，所以遍历的时候，应该从front开始
         for (int i = front; i < front + arrLen; i++) {
-            System.out.println(arr[i]);
+            // 在遍历的时候，i是不能超过maxSize的，所以需要对其取余
+            System.out.println(arr[i % maxSize]);
         }
     }
 
