@@ -3,6 +3,7 @@ public class HeroNode {
     public int id;
     public String name;
     public HeroNode next;
+    public HeroNode pre;
 
     public HeroNode(int id, String name) {
         this.id = id;

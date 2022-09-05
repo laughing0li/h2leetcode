@@ -1,3 +1,4 @@
+import linkedlist.DoubleLinkedList;
 import linkedlist.HeroNode;
 import linkedlist.SingleLinkedList;
 
@@ -9,15 +10,15 @@ public class App {
         HeroNode node4 = new HeroNode(8, "tt");
         HeroNode node5 = new HeroNode(4, "sdsd");
         HeroNode node6 = new HeroNode(7, "sdsd");
-        SingleLinkedList sLinkedList = new SingleLinkedList();
-        sLinkedList.addNode(node1);
-        sLinkedList.addNode(node2);
-        sLinkedList.addNode(node3);
-        sLinkedList.addNode(node4);
-        sLinkedList.addNodeById(node5);
-        sLinkedList.addNodeById(node6);
-
-        sLinkedList.display();
-
+        HeroNode node8 = new HeroNode(3, "123123");
+        DoubleLinkedList dList = new DoubleLinkedList();
+        dList.addNode(node1);
+        dList.addNode(node2);
+        dList.addNode(node3);
+        dList.addNode(node4);
+        dList.addNode(node5);
+        dList.addNode(node6);
+        dList.addNodeByIdOrder(node8);
+        dList.display();
     }
 }

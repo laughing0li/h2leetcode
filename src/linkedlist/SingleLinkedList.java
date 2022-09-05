@@ -73,4 +73,65 @@ public class SingleLinkedList {
             System.out.println(temp);
         }
     }
+
+    public void delete(int id) {
+        if (isEmpty()) {
+            throw new RuntimeException("List is empty!");
+        }
+        boolean flag = false;
+        HeroNode temp = head;
+        while (true) {
+            if (temp.next == null) {
+                break;
+            }
+            if (temp.next.id == id) {
+                flag = true;
+                break;
+            }
+            temp = temp.next;
+        }
+        if (flag) {
+            temp.next = temp.next.next;    
+        } else {
+            System.out.println("this id does not exists");
+        }
+    }
+
+    public int totalNodes() {
+        if (isEmpty()) {
+            throw new RuntimeException("List is empty!");
+        }
+        int num = 0;
+        HeroNode temp = head;
+        while (true) {
+            if (temp.next == null) {
+                break;
+            }
+            temp = temp.next;
+            num++;
+        }
+        return num;
+    }
+    // find the Kth node from the last
+    // 找倒数第k个元素，那么就是找正数第total - k + 1个 元素
+    // 
+    public HeroNode findNode(int k) {
+        if (k > totalNodes()) {
+            throw new RuntimeException("only have " + totalNodes() + " nodes");
+        }
+        int nodeNum = totalNodes() - k + 1;   
+        int flag = 0;
+        HeroNode temp = head;
+        while (true) {
+            if (temp.next == null) {
+                break;
+            }
+            if (flag == nodeNum) {
+                break;
+            }
+            temp = temp.next;
+            flag++;
+        }
+        return temp;
+    }
 }
