@@ -11,6 +11,6 @@ public class HeroNode {
     }
     @Override
     public String toString() {
-        return "my id is " + id + " my name is: " + name;
+        return "my id is " + id + " my name is: " + name ;
     }
 }
