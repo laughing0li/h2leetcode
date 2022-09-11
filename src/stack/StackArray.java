@@ -9,6 +9,8 @@ public class StackArray {
         private int[] stack; // 用于实现栈的数组
         private int top = -1; // 表示栈顶，初始为-1
 
+        public StackArray(){}
+
         public StackArray(int maxSize) {
             this.maxSize = maxSize;
             stack = new int[maxSize];
@@ -65,5 +67,9 @@ public class StackArray {
                 count++;
             }
             return count;
+        }
+
+        public int peek() {
+            return stack[top];
         }
 }
