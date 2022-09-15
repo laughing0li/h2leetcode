@@ -1,5 +1,7 @@
 package stack;
-
+/**
+ * 中缀表达式计算器
+ */
 public class Calculator extends StackArray{
 
     public Calculator(int maxSize) {

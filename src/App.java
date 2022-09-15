@@ -1,10 +1,15 @@
-import stack.Calculator;
+import java.util.ArrayList;
+import java.util.Stack;
+
+import stack.ReverseCal;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Calculator num = new Calculator(5);
-        Calculator oper = new Calculator(5);
-        String to_be_cal = "10-15/3+2*10";
+        Stack<String> nStack = new Stack<>();
+        Stack<String> oStack = new Stack<>();
+        String str = "10+2*4+(5*4+4)/4";
+        ReverseCal cal = new ReverseCal(5);
+        Stack<String> stack = cal.experToRevExpersion(cal.stringToList(str));
+        System.out.println(cal.getResult(stack));
     }
-
 }
