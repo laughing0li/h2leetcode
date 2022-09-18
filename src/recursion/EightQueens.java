@@ -11,14 +11,20 @@ public class EightQueens {
         max = maxSize;
         queens = new int[maxSize];
     }
-    // 递归
+    
+    // n是从0开始的，也就是从第一个皇后开始往里面放
     public void check(int n) {
+        // 当n等于8的时候，是表明的第九个皇后。所以在第九个的时候直接就return。
+        // 前8个皇后就都被放置于棋盘了
         if (n == max) {
             display();
             return;
         }
         for (int i = 0; i < max; i++) {
+            // 先将当前的皇后n放入到
             queens[n] = i;
+            // 当judge为true的时候，表明当前n皇后的位置是正确的
+            // 所以就可以继续操作n+1的皇后
             if (judge(n)) {
                 check(n + 1);
             }
@@ -41,7 +47,7 @@ public class EightQueens {
         }
         return true;
     }
-    
+
     public void display() {
         count++;
         for (int i = 0; i < queens.length; i++) {
