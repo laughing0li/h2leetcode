@@ -3,7 +3,7 @@ package sort;
 import java.util.Arrays;
 
 /**
- * 桶排序：
+ * 基数排序：
  * 1. 先比较个位数，无论这个数有多大，我们都先只比较个位数的大小。
  * 2. 然后比较十位数，如果没有十位数，那么就在该数前面添加一个0.它会在最小的位置
  * 3. 比较百位数 等
@@ -11,7 +11,7 @@ import java.util.Arrays;
  * eg: 432 和 23 这个时候就是比较的第一个数的3 和第二个数的2的大小。以此类推
  * 5. 这种方法需要先找到序列中最大的一位数，然后根据它来确定最后比较的是十位还是百位或者千位
  */
-public class BucketSort {
+public class RadixSort {
     // main方法里面是解析思路
     public static void main(String[] args) {
         int[] nums = { 53, 3, 542, 14, 215 };
@@ -59,7 +59,6 @@ public class BucketSort {
         }
         // 对于十位和百位数的比较跟个位数的类似。注意点是需要将bucketElementCounts 置空。然后重新接收数据
         // 十位的比较 num / 10 % 10 百位数的 num / 100 % 10 以此类推
-        System.out.println(Arrays.toString(nums));
 
     }
 
@@ -75,13 +74,14 @@ public class BucketSort {
         int[][] bucket = new int[10][nums.length];
 
         int[] bucketElementCounts = new int[10];
-        
+
         for (int j = 0; j < maxLength; j++) {
             for (int i = 0; i < nums.length; i++) {
                 int digitOfElement = (int) (nums[i] / Math.pow(10, j) % 10);
                 bucket[digitOfElement][bucketElementCounts[digitOfElement]++] = nums[i];
             }
             int index = 0;
+            // 从
             for (int i = 0; i < bucketElementCounts.length; i++) {
                 if (bucketElementCounts[i] != 0) {
                     for (int k = 0; k < bucketElementCounts[i]; k++) {
