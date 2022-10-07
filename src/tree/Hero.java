@@ -143,12 +143,50 @@ public class Hero {
         return temp;
     }
 
+    /**
+     * 1. 首先约定这个删除功能
+     * 2. 删除某个节点，不管它是否还有左右子节点 我们都将其一起删除
+     * @param root 根节点
+     * @param id 需要删除的某个节点的id
+     */
+    public void delById(Hero root, int id) {
+        // 首先检查根节点的左右节点是否是想找的
+        if (root.left != null && root.left.getNo() == id) {
+            root.left = null;
+            return;
+        }
+        // 首先需要判断当前节点的左右节点是否为空
+        if (root.right != null && root.right.getNo() == id) {
+            root.right = null;
+            return;
+        }
+        if (root.left != null) {
+            root.left.delById(root.left, id);
+        }
+        if (root.right != null) {
+            root.right.delById(root.right, id);
+        }
+    }
+
     @Override
     public String toString() {
         return "{" +
             " no='" + getNo() + "'" +
             ", name='" + getName() + "'" +
             "}";
+    }
+
+    /**
+     * 该删除方法规定，如果被删除的节点含有子节点
+     * 1. 如果只有其中一个子节点，那么就用该子节点代替它
+     * 2. 如果左右子节点都有：
+     * 2.1 先看左右子节点是否都是
+     * 
+     * @param root
+     * @param id
+     */
+    public void del(Hero root, int id) {
+
     }
 
 }

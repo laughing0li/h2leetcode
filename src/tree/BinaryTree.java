@@ -61,4 +61,13 @@ public class BinaryTree {
             return null;
         }
     }
+
+    public void delById(Hero root, int id) {
+        // 为什么根节点删除不了？
+        if (root.getNo() == id) {
+            root = null;
+        } else {
+            root.delById(root, id);
+        }
+    }
 }
