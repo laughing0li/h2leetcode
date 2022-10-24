@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ZConvert {
     public static void main(String[] args) {
-        System.out.println(convert("leetcod", 3));
+        System.out.println(convert("ab", 1));
     }
     public static String convert(String s, int numRows) {
         if (numRows < 2) return s;
