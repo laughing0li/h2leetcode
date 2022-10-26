@@ -13,7 +13,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return "id is " + this.id + " name is " + this.name;
     }
 }

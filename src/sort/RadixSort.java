@@ -1,6 +1,5 @@
 package sort;
 
-import java.util.Arrays;
 
 /**
  * 基数排序：
@@ -23,7 +22,7 @@ public class RadixSort {
             }
         }
         // 算出最大的数一共有多少位
-        int maxLength = Integer.toString(max).length();
+        // int maxLength = Integer.toString(max).length();
 
         // 长度为10的数组用于表示第几个桶
         // 长度为nums.length的数组用于表示一个桶。每个桶极端情况下存放nums.length个数据

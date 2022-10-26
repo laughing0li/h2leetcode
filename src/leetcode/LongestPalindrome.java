@@ -1,8 +1,5 @@
 package leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /*
  * 
  * 找出一个字符串当中，最长的一个回文串

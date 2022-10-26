@@ -9,7 +9,6 @@ import java.util.Arrays;
 public class ShellSort {
     public static void main(String[] args) {
         int[] nums = { 8, 9, 1, 7, 2, 3, 5, 4, 6, 0 };
-        int temp = 0;
         // 以下三步的i的起始值都应该是从等于间隔开始。间隔分别是5，2，1
         // 第一步，将该数组分成5个小组，每组两个数字进行比较。
         // 两个数字不是相邻的，而是间隔了5的两个数字，比如nums[0] 和 nums[5]

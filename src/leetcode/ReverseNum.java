@@ -9,7 +9,6 @@ package leetcode;
  */
 public class ReverseNum {
     public static void main(String[] args) {
-        int num = 12345;
     }    
 
     public static int reverse(int x) {
