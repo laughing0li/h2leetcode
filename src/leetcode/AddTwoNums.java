@@ -40,5 +40,26 @@ public class AddTwoNums {
 class ListNode {
     int val;
     ListNode next;
-    ListNode(int x) { val = x; } 
+    ListNode() {}
+    ListNode(int val) { this.val = val; } 
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+    public static int total(ListNode head) {
+        ListNode tmp = head;
+        int len = 0;
+        while (true) {
+            len++;
+            if (tmp.next == null) break;
+            tmp = tmp.next;
+        }
+        return len;
+    }
+    public static void display(ListNode node) {
+        ListNode temp = node;
+        while (true) {
+            System.out.println(temp.val);
+            if (temp.next == null) break;
+            temp = temp.next;
+        }
+    }
 }
