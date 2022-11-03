@@ -32,7 +32,6 @@ public class NextPermutation {
                 break;
             }
         }
-        System.out.println(tmp);
         // 找出从第i - 1 个元素之后 从 数组的尾部往前 找到第一个大于i-1的元素。进行交换，最后再升序排列
         for (int i = nums.length - 1; i > tmp; i--) {
             if (nums[i] > nums[tmp]) {
