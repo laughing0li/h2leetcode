@@ -9,7 +9,6 @@ public class FourSum {
     public static List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> results = new ArrayList<>();
         if (nums == null || nums.length == 0) return results;
-        int len = nums.length;
         Arrays.sort(nums);
         
 
