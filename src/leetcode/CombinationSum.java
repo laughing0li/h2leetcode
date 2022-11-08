@@ -3,6 +3,11 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * 组合总和：给定的数组的元素没有重复的
+ * 
+ */
 public class CombinationSum {
 
     public static void main(String[] args) {
