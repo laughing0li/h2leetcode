@@ -46,11 +46,9 @@ public class CombiantionSum2 {
             res.add(new ArrayList<>(path));
             return;
         }
-        // 
         for (int i = begin; i < len; i++) {
             // 如果当candidates[i] 大于 target 那么直接就break。减去它都大于零了 就没必要往下走了
             if (target - candidates[i] < 0) break;
-            // 这里的作用是为了避免同一层级出现重复的元素。但是允许同一分支出现重复元素
             /**
              * 
                 这个方法最重要的作用是，可以让同一层级，不出现相同的元素。即
@@ -67,18 +65,20 @@ public class CombiantionSum2 {
                             2  
                                 
                 为何会有这种神奇的效果呢？
-                首先 cur-1 == cur 是用于判定当前元素是否和之前元素相同的语句。这个语句就能砍掉例1。
+                首先 i == i - 1 是用于判定当前元素是否和之前元素相同的语句。这个语句就能砍掉例1。
                 可是问题来了，如果把所有当前与之前一个元素相同的都砍掉，那么例二的情况也会消失。 
                 因为当第二个2出现的时候，他就和前一个2相同了。
                                 
                 那么如何保留例2呢？
-                那么就用cur > begin 来避免这种情况，你发现例1中的两个2是处在同一个层级上的，
+                那么就用 i > begin 来避免这种情况，你发现例1中的两个2是处在同一个层级上的，
                 例2的两个2是处在不同层级上的。
                 在一个for循环中，所有被遍历到的数都是属于一个层级的。我们要让一个层级中，
                 必须出现且只出现一个2，那么就放过第一个出现重复的2，但不放过后面出现的2。
-                第一个出现的2的特点就是 cur == begin. 第二个出现的2 特点是cur > begin.
+                第一个出现的2的特点就是 i == begin. 第二个出现的2 特点是 i > begin.
              * 
              */
+            // 当 i 大于 begin 表示已经进入到了至少调用了下一次的backtracking了 所以是不同层级的了。
+            // continue 表示跳过后面的语句 进行下一个循环。会将第一个出现的2 加入到path
             if (i > begin && candidates[i] == candidates[i - 1]) continue;
             path.addLast(candidates[i]);
             // 因为元素是不能重复的 所以这里应该传递i + 1
