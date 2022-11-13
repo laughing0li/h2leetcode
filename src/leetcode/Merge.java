@@ -9,7 +9,7 @@ public class Merge {
     
     public static void main(String[] args) {
         int[][] intervals = {{1, 3}, {2, 6}, {3, 10}, {15, 18}};
-        int[][]res = merge(intervals);
+        int[][] res = merge(intervals);
         for (int[] is : res) {
             System.out.println(Arrays.toString(is));
         }
